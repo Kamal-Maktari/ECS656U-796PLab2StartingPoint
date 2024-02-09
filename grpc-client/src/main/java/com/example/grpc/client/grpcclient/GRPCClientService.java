@@ -45,23 +45,23 @@ public class GRPCClientService {
 		return resp;
     }
     public String multiply() {
-	            ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9090)
-	                    .usePlaintext()
-	                    .build();
-	            MatrixServiceGrpc.MatrixServiceBlockingStub stub
-	                    = MatrixServiceGrpc.newBlockingStub(channel);
-	            MatrixReply A = stub.multiplyBlock(MatrixRequest.newBuilder()
-	                    .setA00(1)
-	                    .setA01(2)
-	                    .setA10(5)
-	                    .setA11(6)
-	                    .setB00(1)
-	                    .setB01(2)
-	                    .setB10(5)
-	                    .setB11(6)
-	                    .build());
-	            String resp = A.getC00() + " " + A.getC01() + "<br>" + A.getC10() + " " + A.getC11() + "\n";
-	            channel.shutdown();
-	            return resp;
+	    ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9090)
+		    .usePlaintext()
+		    .build();
+	    MatrixServiceGrpc.MatrixServiceBlockingStub stub
+		    = MatrixServiceGrpc.newBlockingStub(channel);
+	    MatrixReply A = stub.multiplyBlock(MatrixRequest.newBuilder()
+		    .setA00(1)
+		    .setA01(2)
+		    .setA10(5)
+		    .setA11(6)
+		    .setB00(1)
+		    .setB01(2)
+		    .setB10(5)
+		    .setB11(6)
+		    .build());
+	    String resp = A.getC00() + " " + A.getC01() + "<br>" + A.getC10() + " " + A.getC11() + "\n";
+	    channel.shutdown();
+	    return resp;
     }
 }
