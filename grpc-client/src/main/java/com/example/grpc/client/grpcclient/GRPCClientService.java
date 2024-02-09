@@ -55,10 +55,10 @@ public class GRPCClientService {
 		    .setA01(2)
 		    .setA10(5)
 		    .setA11(6)
-		    .setB00(1)
-		    .setB01(2)
-		    .setB10(5)
-		    .setB11(6)
+		    .setB00(4)
+		    .setB01(6)
+		    .setB10(12)
+		    .setB11(14)
 		    .build());
 	    String resp= A.getC00()+A.getC01()+A.getC10()+A.getC11()+"";
 	    channel.shutdown();
